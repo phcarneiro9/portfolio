@@ -32,6 +32,9 @@
 			href="./assets/img/favicon.svg"
 		/>
 
+        <!-- SWIPER CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
         <!-- Css Principal da página -->
         <link rel="stylesheet" href="./assets/css/styles.css">
 
@@ -84,7 +87,7 @@
         <!-- Imagem da Seção Hero -->
         <figure class="hero-image">
           <img 
-            src="./assets/img/foto_dev_man.svg"
+            src="./assets/img/avatar_ph.png"
             width="300px"
             alt="Foto do autor do site"
             class="float-animation"
@@ -109,23 +112,18 @@
           <article class="about-content">
             <h2>Sobre mim</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur 
-              adipisicing elit. Hic minima quidem perferendis 
-              ut eius similique autem consectetur quisquam. 
-              Ducimus at molestias illo obcaecati animi pariatur 
-              voluptate eligendi fugit cupiditate nemo?
+              Sou estudante de Sistemas de Informação e Desenvolvedor Full Stack, 
+              com foco em Java e Spring Boot. Tenho experiência no desenvolvimento 
+              de aplicações e APIs REST, utilizando tecnologias como Java, 
+              Spring Boot, MySQL, HTML, CSS, JavaScript e Git.
             </p>
             <p>
-              Mussum Ipsum, cacilds vidis litro abertis. 
-              Nec orci ornare consequat. Praesent lacinia 
-              ultrices consectetur. Sed non ipsum felis. 
-              Admodum accumsan disputationi eu sit. 
-              Vide electram sadipscing et per. 
-              Em pé sem cair, deitado sem dormir, 
-              sentado sem cochilar e fazendo pose. 
-              Praesent malesuada urna nisi, 
-              quis volutpat erat hendrerit non. 
-              Nam vulputate dapibus.
+              Durante minha formação, venho desenvolvendo projetos práticos que 
+              envolvem desde a criação de interfaces até a construção de APIs, 
+              integração com bancos de dados e implementação de funcionalidades 
+              de back-end. Busco minha primeira oportunidade na área de tecnologia 
+              para aplicar meus conhecimentos, evoluir profissionalmente e 
+              contribuir com soluções eficientes e de qualidade.
             </p>
 
             <!-- Links (GitHub + Curriculo) e Dados do GitHub-->
@@ -167,47 +165,10 @@
         <!-- Swiper Container -->
         <div class="swiper projects-swiper">
 
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-
-              <article class="project-card">
-
-                <!-- Ícone da Tecnologia padrão do projeto -->
-                <figure class="project-image">
-                  <img src="./assets/icons/languages/github.svg"
-                      alt="Ícone do GitHub"
-                      width="100px"
-                  >
-                </figure>
-
-                <!-- Conteúdo do Projeto -->
-                <div class="project-content">
-
-                  <h3>Projeto GitHub</h3>
-                  <p>Projeto desenvolvido no GitHub</p>
-
-                  <!-- Tags do Projeto -->
-                  <div class="project-tags">
-                    <span class="tag">GitHub</span>
-                  </div>
-
-                  <!-- Links do Projeto -->
-                  <div class="project-buttons">
-                    <a href="#" target="_blank" class="botao botao-sm">
-                      GitHub
-                    </a>
-                    <a href="#" target="_blank" class="botao-outline botao-sm">
-                      Deploy
-                    </a>
-                  </div>
-
-                </div>
-
-              </article>
-
-            </div>
-
+        <div class="swiper-wrapper">
+ 
+           
+ 
           </div>
 
           <!-- Botões de Navegação -->
@@ -233,21 +194,21 @@
           <!-- Links para as Redes Sociais -->
           <div class="social-container">
 
-            <a href="#" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/phcarneiro9/" target="_blank" class="social-icon" aria-label="LinkedIn">
               <img
                 src="./assets/icons/social/linkedin.svg"
                 alt="Link para o LinkedIn"
               >
             </a>
 
-            <a href="#" target="_blank" class="social-icon" aria-label="GitHub">
+            <a href="https://github.com/phcarneiro9" target="_blank" class="social-icon" aria-label="GitHub">
               <img
                 src="./assets/icons/social/github.svg"
                 alt="Link para o GitHub"
               >
             </a>
 
-            <a href="#" target="_blank" class="social-icon" aria-label="Instagram">
+            <a href="https://www.instagram.com/ph.carneiro_/" target="_blank" class="social-icon" aria-label="Instagram">
               <img
                 src="./assets/icons/social/instagram.svg"
                 alt="Link para o Instagram"
@@ -259,7 +220,10 @@
 
 
         <!-- Formulário de Contato -->
-        <form id="formulario">
+        <form id="formulario" action="https://formsubmit.co/1fde3464c0282bc475663eda37b5efd5" method="POST">
+
+          <input type="hidden" name="_next" value="http://127.0.0.1:5500/sucess.html">
+          <input type="hidden" name="_captcha" value="false">
 
           <label for="nome">Nome</label>
           <input id="nome" name="nome" type="text" placeholder="Digite o seu nome completo">
@@ -288,5 +252,12 @@
 		<footer>
       Desenvolvido por Patrick Carneiro - 2026
     </footer>
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Script Principal da página -->
+    <script src="./assets/js/script.js"></script>
+
 	</body>
 </html>

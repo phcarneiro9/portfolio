@@ -10,18 +10,18 @@
 
 /* Variáveis */
 :root {
-    /* Paleta de Cores - Purple */
-    --purple-50: #f4eaff;
-    --purple-100: #e9dcfa;
-    --purple-200: #cdb3f0;
-    --purple-300: #b186e5;
-    --purple-400: #9460db;
-    --purple-500: #6b36c8;
-    --purple-600: #5b2ca0;
-    --purple-700: #4c2177;
-    --purple-800: #441f88;
-    --purple-900: #2a0e4d;
-    --purple-950: #1a0730;
+    /* Paleta de Cores - Purple = alterado código para o azul para evitar erros no código */
+    --purple-50: #eef1ff;
+    --purple-100: #d9e0ff;
+    --purple-200: #aebcff;
+    --purple-300: #7b91f0;
+    --purple-400: #4c66d6;
+    --purple-500: #2947b8;
+    --purple-600: #172f8f;
+    --purple-700: #0e216d;
+    --purple-800: #091652;
+    --purple-900: #050b3d;
+    --purple-950: #02051f;
  
     /* Cores Neutras */
     --gray-200: #e8e8e8;
@@ -72,9 +72,9 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--white);
+    background-color: #020817;
     line-height: 1.6;
-    color: var(--black);
+    color: var(--white);
 }
 
 main{
@@ -151,9 +151,10 @@ header{
     z-index: 1000;
     width: 100%;
     height: 4rem;
-    border-bottom: var(--spacing-xs) solid var(--gray-200);
-    box-shadow: var(--purple-800);
-    background-color: var(--purple-600);
+    border-bottom: 1px solid rgba(76, 102, 214, 0.10);
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.18);
+    background-color: rgba(2, 8, 23, 0.96);
+    backdrop-filter: blur(10px);
 }
 
 header a{
@@ -163,12 +164,13 @@ header a{
 }
 
 header a:hover{
-    color: var(--purple-200);
+    color: var(--purple-400);
 }
 
 #titulo{
     font-size: var(--text-2xl);
     font-weight: 700;
+    color: #ffffff;
 }
 
 .menu-content{
@@ -196,41 +198,151 @@ header a:hover{
     display: flex;
     align-items: center;
     gap: var(--spacing-2xl);
-    min-height: calc(100vh - 5rem);
+
+    max-width: 100%;
+    min-height: calc(100vh - 4rem);
+
+    padding-left: calc((100% - 90rem) / 2 + var(--spacing-md));
+    padding-right: calc((100% - 90rem) / 2 + var(--spacing-md));
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    background-color: #020817;
 }
 
-.hero-content{
+
+.hero-container::before{
+    content: "";
+    position: absolute;
+
+    inset: -18px;
+
+    background:
+        radial-gradient(
+            circle at 18% 32%,
+            rgba(37, 99, 235, 0.22),
+            transparent 34%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(2, 8, 23, 0.72) 0%,
+            rgba(3, 12, 52, 0.80) 48%,
+            rgba(2, 8, 23, 0.90) 100%
+        ),
+        url("https://ik.imagekit.io/phcarneiro9/3335561-desktop-source-code-and-wallpaper-by-coding-and-programming-gratis-foto.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter:
+        blur(5px)
+        saturate(1.15)
+        brightness(0.82);
+
+    transform: scale(1.035);
+
+    z-index: -1;
+}
+
+
+/* Conteúdo da Hero */
+.hero-container article{
     display: flex;
     flex: 1;
     flex-direction: column;
-}
-
-.hero-content span{
-    font-size: var(--text-lg);
-}
-
-.hero-content h1{
-    font-weight: 500;
-}
-
-/* Configura todos os Parágrafos */
-.hero-content p, 
-.about-content p, 
-.contact-info p{
-    font-size: var(--text-lg);
-    color: var(--gray-400);
-}
-
-.hero-image{
-    display: flex;
-    flex: 1;
     justify-content: center;
 }
 
+
+/* Olá, eu sou... */
+.hero-container article span{
+    color: #ffffff;
+    font-size: var(--text-lg);
+    font-weight: 500;
+}
+
+
+/* Desenvolvedor Full Stack */
+.hero-container article h1{
+    margin-top: 0.5rem;
+    color: #2563EB;
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 1.15;
+    white-space: nowrap;
+    letter-spacing: -0.03em;
+}
+
+
+/* Texto abaixo do título */
+.hero-container article h1 .full-stack{
+    color: #2563eb;
+    font-size: inherit;
+    font-weight: 700;
+}
+
+.hero-container article p{
+    max-width: 38rem;
+    margin-top: 0.85rem;
+    color: #eef1ff;
+    font-size: var(--text-lg);
+    line-height: 1.55;
+}
+
+
+/* Botões */
+.hero-container article .buttons-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+
+/* Botão Entre em contato */
+.hero-container .botao{
+    padding: 0.9rem 2rem;
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 0.5rem 1.3rem rgba(37, 99, 235, 0.20);
+}
+
+
+/* Botão Saiba mais */
+.hero-container .botao-outline{
+    padding: 0.9rem 2rem;
+    border-color: #2563eb;
+    background-color: rgba(2, 8, 23, 0.18);
+    color: #ffffff;
+}
+
+
+.hero-container .botao-outline:hover{
+    border-color: #3b82f6;
+    background-color: rgba(37, 99, 235, 0.10);
+    color: #ffffff;
+}
+
+
+/* Área da imagem */
+.hero-image{
+    display: flex;
+    flex: 1.15;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Personagem com notebook */
 .hero-image img{
-    width: 100%;
-    max-width: 100%;
+    width: 30rem;
+    max-width: none;
     border-radius: var(--radius-xl);
+    filter: drop-shadow(0 1.2rem 2rem rgba(0, 0, 0, 0.22));
 }
 
 /* Animação Flutuante */
@@ -256,7 +368,7 @@ header a:hover{
     align-items: center;
     flex-direction: row;
     gap: var(--spacing-2xl);
-    background-color: var(--gray-200);
+    background-color: #07133a;
     border-radius: var(--radius-lg);
 }
 
@@ -268,7 +380,7 @@ header a:hover{
 }
 
 .about-content h2{
-    color: var(--purple-500);
+    color: #ffffff;
     font-weight: 700;
     font-size: var(--text-2xl);
 }
@@ -278,6 +390,7 @@ header a:hover{
      font-size: var(--text-base);
      margin-bottom: 20px;
      text-align: justify;
+     color: #d9e0ff;
 }
 
 .buttons-container{
@@ -304,7 +417,7 @@ header a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--purple-500);
+    color: #2563EB;
     font-size: var(--text-lg);
     font-weight: 700;
     text-align: center;
@@ -313,7 +426,7 @@ header a:hover{
 .data-label{
     font-size: var(--text-lg);
     text-align: center;
-    color: var(--gray-400);
+    color: #2563EB;
 }
 
 /* Seção Projects */
@@ -334,9 +447,9 @@ header a:hover{
     flex-direction: column;
     width: 100%;
     height: 100%;
-    border: 0.15rem solid var(--gray-200);
+    border: 0.15rem solid #0e216d;
     border-radius: var(--radius-lg);
-    background-color: var(--white);
+    background-color: #07133a;
     box-shadow: var(--shadow-sm);
     overflow: hidden;
     transition: var(--transition-default);
@@ -352,7 +465,7 @@ header a:hover{
     align-items: center;
     width: 100%;
     height: 10rem;
-    background: linear-gradient(135deg, var(--white) 0%, var(--purple-500) 100%);
+    background: linear-gradient(135deg, #0e216d 0%, #020817 100%);
 }
 .project-image img{
     width: 75%;
@@ -381,7 +494,7 @@ header a:hover{
     flex: 1;
     margin-bottom: var(--spacing-sm);
     font-size: var(--text-base);
-    color: var(--gray-400);
+    color: #aebcff;
 }
 
 .project-tags{
@@ -500,13 +613,19 @@ header a:hover{
 }
 
 /* Redes Sociais */
+.contact-info{
+    text-align: center;
+}
+
 .contact-info h2{
     margin-bottom: var(--shadow-sm);
     font-weight: 700;
+    color: #2563EB;
 }
 
 .contact-info p{
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 2rem;
+    color: #d9e0ff;
 }
 
 .social-container{
@@ -517,27 +636,21 @@ header a:hover{
 
 .social-icon{
     display: flex;
-    width: 5rem;
-    height: 5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: var(--radius-md);
     transition: var(--transition-default);
 }
 
 .social-icon img{
     width: 100%;
-    filter: brightness(0) saturate(100);
+    filter: brightness(0) invert(1);
     transition: filter 0.3 ease;
 }
 
 .social-icon img:hover {
-  filter: brightness(0) 
-          saturate(100%) 
-          invert(42%) 
-          sepia(93%) 
-          saturate(1352%) 
-          hue-rotate(243deg) 
-          brightness(79%) 
-          contrast(91%);
+    filter: brightness(0) invert(1)
+            drop-shadow(0 0 0.5rem rgba(37, 99, 235, 0.6));
 }
 
 form{
@@ -549,6 +662,7 @@ form{
 form label{
     font-size: var(--text-base);
     font-weight: 600;
+    color: #ffffff;
 }
 
 form input, 
@@ -598,7 +712,7 @@ main button a{
 /* Footer */
 footer {
     padding: 2rem;
-    background: linear-gradient(to right, var(--purple-500), var(--purple-800));
+    background: #000000;
     font-weight: 600;
     text-align: center;
     color: var(--white);
@@ -788,7 +902,329 @@ footer {
 /* Responsividade Celular */
 
 @media screen and (max-width: 480px){
-    
+    body{
+        overflow-x: hidden;
+    }
+
+    .section-container{
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .menu-content{
+        padding: 0 1rem;
+    }
+
+    #titulo{
+        font-size: 1.25rem;
+    }
+
+    .hero-container{
+        width: 100%;
+        min-height: auto;
+        padding: 3rem 1rem;
+        gap: 2rem;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-container article{
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-container article span{
+        font-size: 1rem;
+    }
+
+    .hero-container article h1{
+        width: 100%;
+        font-size: 2rem;
+        line-height: 1.2;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .hero-container article p{
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .hero-container article .buttons-container{
+        width: 100%;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .hero-container .botao,
+    .hero-container .botao-outline{
+        width: 100%;
+        padding: 0.8rem 1rem;
+    }
+
+    .hero-image{
+        width: 100%;
+        flex: none;
+    }
+
+    .hero-image img{
+        width: 100%;
+        max-width: 22rem;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .about-container{
+        width: calc(100% - 2rem);
+        margin: 1rem;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .about-image{
+        width: 100%;
+    }
+
+    .about-image img{
+        width: 12rem;
+        height: 12rem;
+        max-width: 12rem;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .about-content{
+        width: 100%;
+    }
+
+    .about-content h2{
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    .about-content p{
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .about-buttons-data{
+        width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about-buttons-data .buttons-container{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .about-buttons-data .botao,
+    .about-buttons-data .botao-outline{
+        width: 100%;
+    }
+
+    .data-container{
+        width: 100%;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .data-number,
+    .data-label{
+        font-size: 1rem;
+    }
+
+    .projects-container{
+        width: 100%;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    .projects-swiper{
+        width: 100%;
+        padding: 1rem 0 2.5rem;
+    }
+
+    .project-card{
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .project-image{
+        height: 9rem;
+    }
+
+    .project-image img{
+        width: 65%;
+        height: 65%;
+        max-width: 6rem;
+        max-height: 6rem;
+        object-fit: contain;
+    }
+
+    .project-content{
+        height: auto;
+        padding: 1rem;
+    }
+
+    .project-content h3{
+        font-size: 1.1rem;
+    }
+
+    .project-content p{
+        font-size: 0.9rem;
+        overflow: visible;
+    }
+
+    .project-buttons{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .project-buttons .botao,
+    .project-buttons .botao-outline{
+        width: 100%;
+    }
+
+    .contact-container{
+        width: 100%;
+        padding: 0 1rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info{
+        width: 100%;
+    }
+
+    .social-container{
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .social-icon{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    form input,
+    form textarea{
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    form button{
+        width: 100%;
+    }
+
+    footer{
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }
+
+/* Cor principal do site */
+header{
+    background-color: rgba(2, 8, 23, 0.96);
+}
+
+/* Botões principais */
+.botao{
+    background-color: #2563EB;
+    border-color: #2563EB;
+}
+
+.botao:hover{
+    background-color: #2563EB;
+    border-color: #2563EB;
+}
+
+/* Botões outline */
+.botao-outline{
+    border-color: #2563EB;
+    color: #2563EB;
+}
+
+/* Sobre mim */
+.about-content h2{
+    color: #2563EB;
+}
+
+.data-number{
+    color: #2563EB;
+}
+
+/* Fundo dos cards dos projetos */
+.project-image{
+    background: linear-gradient(
+        135deg,
+        #0e216d 0%,
+        #020817 100%
+    );
+}
+
+/* Tags dos projetos */
+.tag{
+    background-color: #ffffff;
+    color: #050b3d;
+}
+
+/* Setas do carrossel */
+.swiper-button-next:after,
+.swiper-button-prev:after{
+    color: #ffffff;
+}
+
+/* Paginação do carrossel */
+.swiper-pagination-bullet-active{
+    background-color: #2563eb;
+}
+
+/* Formulário */
+form input:focus,
+form textarea:focus{
+    border-color: #2563EB;
+}
+
+/* Rodapé */
+footer{
+    background: #000000;
+    color: var(--white);
+}
+
+.about-container{
+    border: 1px solid #2563EB;
+}
+
+.project-card{
+    border-color: #2563EB;
+}
+
+.project-image{
+    border-bottom: 1px solid #2563EB;
+}
+
+.social-icon img:hover{
+    filter: brightness(0) saturate(100%) invert(39%) sepia(97%) saturate(3145%) hue-rotate(214deg) brightness(96%) contrast(93%);
+}
+
+form button{
+    background-color: #2563EB;
+    border-color: #2563EB;
+
+  
+}
+
+
+
+
 
 
