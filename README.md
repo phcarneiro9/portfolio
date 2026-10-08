@@ -47,3 +47,5 @@ Criar uma apresentação profissional utilizando tecnologias fundamentais do des
 **Patrick Carneiro**
 
 [GitHub](https://github.com/phcarneiro9)
+
+<!-- README refresh -->
